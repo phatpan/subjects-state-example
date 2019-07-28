@@ -1,18 +1,17 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
-      <mat-toolbar>Menu</mat-toolbar>
-      <mat-nav-list>
-        <a mat-list-item (click)="goHomePage()">หน้าหลัก</a>
-      </mat-nav-list>
-    </mat-sidenav>
     <mat-sidenav-content>
-      <mat-toolbar color="primary">
+      <mat-toolbar color="primary" class="blog-toobar-fixed">
         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="show">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          <mat-icon aria-label="Side nav toggle icon">Home</mat-icon>
         </button>
-        <!-- <span>Title Page</span> -->
+        <div class="full_right"></div>
+        <div class="m-r-5 account-name" mat-icon-button [matMenuTriggerFor]="toolbarMenu">Phatcharaphan Ananpreechakun</div>
+          <div class="m-t-50">
+            <mat-menu #toolbarMenu="matMenu" yPosition="below">
+              <button mat-menu-item>Profile</button>
+              <button mat-menu-item>Logout</button>
+            </mat-menu>
+          </div>
       </mat-toolbar>
       <div class="blog-content" align="center">
         <router-outlet></router-outlet>

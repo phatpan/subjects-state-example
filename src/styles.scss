@@ -1,2 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    margin: 0;
+    font-family: "K2D";
+  
+    .close-button-top-right-modal {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      cursor: pointer;
+      @mixin md-icon-size($size: 32px) {
+        font-size: $size;
+        height: $size;
+        width: $size;
+        line-height: $size;
+      }
+      mat-icon {
+        @include md-icon-size(32px);
+      }
+    }
+  
+    .mat-dialog-content {
+      margin: 0px;
+      padding: 0px;
+    }
+}

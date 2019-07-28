@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatDialogModule, MatAutocompleteModule, MatNativeDateModule, MatDatepickerModule, MatProgressSpinnerModule, MatCheckboxModule, MatTableModule, MatSelectModule, MatOptionModule, MatInputModule, MatFormFieldModule, MatCardModule, MatListModule, MatIconModule, MatSidenavModule, MatToolbarModule, MatRadioModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatAutocompleteModule, MatNativeDateModule, MatDatepickerModule, MatProgressSpinnerModule, MatCheckboxModule, MatTableModule, MatSelectModule, MatOptionModule, MatInputModule, MatFormFieldModule, MatCardModule, MatListModule, MatIconModule, MatSidenavModule, MatToolbarModule, MatRadioModule, MatMenuModule } from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -23,7 +23,8 @@ import { MatButtonModule, MatDialogModule, MatAutocompleteModule, MatNativeDateM
     MatNativeDateModule,
     MatAutocompleteModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    MatMenuModule
   ],
   exports: [
     MatToolbarModule,
@@ -43,7 +44,8 @@ import { MatButtonModule, MatDialogModule, MatAutocompleteModule, MatNativeDateM
     MatNativeDateModule,
     MatAutocompleteModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    MatMenuModule
   ]
 })
 export class MaterialComponentModule { }
