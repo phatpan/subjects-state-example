@@ -16,4 +16,8 @@ export class StateService {
     }, this.initialState)
   );
   constructor() { }
+
+  setStore(obj: IBLOG | IUPDATE) {
+    this.blogSubject.next(obj);
+  }
 }

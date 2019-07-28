@@ -1,0 +1,18 @@
+
+<mat-card class="blog-card" *ngIf="blogService.getBlog | async as item">
+    <mat-card-header>
+        <div mat-card-avatar class="blog-header-image"></div>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image *ngIf="item.url" [src]="item.url" [alt]="item.title">
+    <mat-card-content>
+        <p>
+            {{ item.content }}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button #clappingBtn class="button-add-clap"><img src="https://tchol.org/images/clapping-emoji-png-7.png" class="image-clap"/>
+            {{ item.clapping }} claps</button>
+        
+    </mat-card-actions>
+</mat-card>

@@ -1,6 +1,9 @@
 export interface IBLOG {
-    name: string;
+    id: number;
+    title: string;
+    url: string;
     content: string;
+    date: string;
     clapping?: number;
 }
 
