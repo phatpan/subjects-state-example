@@ -1,0 +1,15 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-container > * {
+  width: 100%;
+}
+
+.profile-card {
+    max-width: 500px;
+}
+.margin-right-5px{
+    margin-right: 5px;
+}

@@ -20,9 +20,9 @@ export class ListComponent implements OnInit {
   }
 
   private setupClapping() {
-    const newVal = { clapping: 0 };
+    const newVal = { clap: 0 };
     const addClapping = () => {
-      newVal.clapping++;
+      newVal.clap++;
       this.blogService.addClapping(newVal);
     };
     // Click to add a single star

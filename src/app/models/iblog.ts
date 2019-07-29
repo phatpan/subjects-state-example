@@ -4,9 +4,9 @@ export interface IBLOG {
     url: string;
     content: string;
     date: string;
-    clapping?: number;
+    clap?: number;
 }
 
 export interface IUPDATE {
-    clapping: number;
+    clap: number;
 }
