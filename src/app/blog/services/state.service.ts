@@ -10,11 +10,13 @@ import { IBLOG, IUPDATE } from '../../models/iblog';
 export class StateService {
   private initialState = null;
   private blogSubject = new BehaviorSubject(this.initialState);
+
   blogStore$ = this.blogSubject.pipe(
     scan((acc: IBLOG, newVal: IBLOG | IUPDATE) => {
       return { ...acc, ...newVal };
     }, this.initialState)
   );
+
   constructor() { }
 
   setStore(obj: IBLOG | IUPDATE) {

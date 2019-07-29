@@ -15,20 +15,20 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.blogService.init$().subscribe(
-      () => this.setupClapping()
+      () => this.setupClap()
     );
   }
 
-  private setupClapping() {
+  private setupClap() {
     const newVal = { clap: 0 };
-    const addClapping = () => {
+    const addClap = () => {
       newVal.clap++;
-      this.blogService.addClapping(newVal);
+      this.blogService.addClap(newVal);
     };
-    // Click to add a single star
+    // Click to add a single clap
     const click$ = fromEvent(this.clappingBtn.nativeElement, 'click');
-    click$.subscribe(addClapping);
-    // Hold mouse down to add stars continuously until mouse up or leave button
+    click$.subscribe(addClap);
+    // Hold mouse down to add clap continuously until mouse up or leave button
     const mousedown$ = fromEvent(this.clappingBtn.nativeElement, 'mousedown');
     const mouseup$ = fromEvent(this.clappingBtn.nativeElement, 'mouseup');
     const mouseleave$ = fromEvent(this.clappingBtn.nativeElement, 'mouseleave');
@@ -39,7 +39,7 @@ export class ListComponent implements OnInit {
         )
       ))
     );
-    hold$.subscribe(addClapping);
+    hold$.subscribe(addClap);
   }
 
 }

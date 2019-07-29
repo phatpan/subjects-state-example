@@ -26,7 +26,7 @@ export class BlogService {
     return this.state.blogStore$;
   }
 
-  addClapping(starsObj: IUPDATE) {
+  addClap(starsObj: IUPDATE) {
     this.state.setStore(starsObj);
   }
 }
