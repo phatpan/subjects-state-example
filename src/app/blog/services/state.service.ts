@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { scan } from 'rxjs/operators';
-import { IBLOG, IUPDATE } from '../models/iblog';
+import { IBLOG, IUPDATE } from '../../models/iblog';
 
 @Injectable({
   providedIn: 'root'

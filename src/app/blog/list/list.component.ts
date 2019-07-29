@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BlogService } from 'src/app/services/blog.service';
 import { fromEvent, interval, merge } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
+import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-list',
