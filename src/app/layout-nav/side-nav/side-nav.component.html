@@ -5,7 +5,10 @@
           <mat-icon aria-label="Side nav toggle icon" >Home</mat-icon>
         </button>
         <div class="full_right"></div>
-        <div class="m-r-5 account-name" mat-icon-button [matMenuTriggerFor]="toolbarMenu">Phatcharaphan Ananpreechakun</div>
+        <div class="m-r-5 account-name" mat-icon-button [matMenuTriggerFor]="toolbarMenu" 
+            *ngIf="data.profileStore | async as profile">
+          {{ profile.name }}  {{ profile.lastname }}
+        </div>
           <div class="m-t-50">
             <mat-menu #toolbarMenu="matMenu" yPosition="below">
               <button mat-menu-item [routerLink]="['/profile']">Profile</button>

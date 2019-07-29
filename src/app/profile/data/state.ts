@@ -19,17 +19,17 @@ export class State {
         this.prevState = this.profileStoreSubject.getValue();
     }
 
-    dismissError() {
+    protected dismissError() {
         this.errorSubject.next(null);
     }
 
-    setProfileStore(profile: Profile) {
+    protected setProfileStore(profile: Profile) {
         this.setPrevState();
         this.profileStoreSubject.next(profile);
         this.dismissError();
     }
 
-    stateError(errorMessage: string) {
+    protected stateError(errorMessage: string) {
         this.errorSubject.next(errorMessage);
         this.profileStoreSubject.next(this.prevState);
     }

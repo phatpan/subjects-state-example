@@ -21,3 +21,7 @@
         </form>
     </mat-card-content>
 </mat-card>
+<app-error 
+    *ngIf="data.error | async as err"
+    [msg]="err">
+</app-error>

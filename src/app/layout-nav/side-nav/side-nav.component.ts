@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { ProfileService } from 'src/app/profile/data/profile.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,8 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent {
+  name: string;
   constructor(
     private router: Router,
+    public data: ProfileService
   ) { }
 
   goHomePage() {
