@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   constructor(
     private formBuilder: FormBuilder,
-    private data: ProfileService,
+    public data: ProfileService,
     private router: Router) { }
 
   ngOnInit() {

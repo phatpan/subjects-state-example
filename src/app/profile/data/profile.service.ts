@@ -11,7 +11,6 @@ import { Router, NavigationEnd } from '@angular/router';
   providedIn: 'root'
 })
 export class ProfileService extends State {
-
   constructor(private http: HttpClient, private router: Router) {
     super();
     // Clear any state errors on navigation event
@@ -26,7 +25,9 @@ export class ProfileService extends State {
 
   init(): Observable<Profile> {
     return this.http.get<Profile>(`${environment.API_URL}/profile`).pipe(
-      tap(profile => { this.setProfileStore(profile); }),
+      tap(profile => {
+        this.setProfileStore(profile);
+      }),
       catchError(error => this.onError(error))
     );
   }
@@ -35,7 +36,9 @@ export class ProfileService extends State {
     this.setProfileStore(object);
     return this.http.post<Profile>(`${environment.API_URL}/profile`, object).pipe(
       delay(2000), // Simulate longer server delay
-      tap(profile => { this.setProfileStore(profile); }),
+      tap(profile => {
+        this.setProfileStore(profile);
+      }),
       catchError(error => this.onError(error))
     );
   }

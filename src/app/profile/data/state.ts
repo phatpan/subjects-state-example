@@ -2,6 +2,7 @@ import { Profile } from './profile.model';
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
 
 export class State {
+    private initialState = null;
     private prevState: Profile;
     private profileStoreSubject: BehaviorSubject<Profile>;
     private errorSubject: Subject<string>;
@@ -9,7 +10,7 @@ export class State {
     error: Observable<string>;
 
     protected constructor() {
-        this.profileStoreSubject = new BehaviorSubject(null);
+        this.profileStoreSubject = new BehaviorSubject(this.initialState);
         this.errorSubject = new Subject();
         this.profileStore = this.profileStoreSubject.asObservable();
         this.error = this.errorSubject.asObservable();
