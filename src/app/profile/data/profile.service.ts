@@ -34,6 +34,7 @@ export class ProfileService extends State {
   updateProfile(object: Profile): Observable<Profile> {
     this.setProfileStore(object);
     return this.http.post<Profile>(`${environment.API_URL}/profile`, object).pipe(
+      delay(2000), // Simulate longer server delay
       tap(profile => { this.setProfileStore(profile); }),
       catchError(error => this.onError(error))
     );

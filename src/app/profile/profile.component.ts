@@ -34,8 +34,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
   onSave() {
     const profile = this.form.getRawValue();
     this.data.updateProfile(profile).subscribe(
-      _ => this.router.navigate([`/`]),
-      _ => this.setData(profile));
+      _ => {
+        console.log('Successfully updated', profile);
+        this.router.navigate([`/`]);
+      },
+      err => {
+        console.error(err);
+        this.setData(profile);
+      });
   }
 
   private setData(profile: Profile) {
