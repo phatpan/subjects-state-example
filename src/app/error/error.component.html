@@ -1,1 +1,9 @@
 
+<div class="error-container">
+    <div class="toast-error alert alert-danger">
+        <div class="toast-error-header">
+          <a class="float-right pl-3" (click)="data.dismissError()" tabindex>&times;</a>
+          <ng-container *ngIf="msg">{{ msg }}</ng-container>
+        </div>
+    </div>
+</div>

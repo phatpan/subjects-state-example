@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { ProfileService } from '../profile/data/profile.service';
 
 @Component({
   selector: 'app-error',
@@ -9,16 +10,9 @@ import { MatSnackBar } from '@angular/material';
 export class ErrorComponent implements OnInit {
 
   @Input() msg: string;
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(public data: ProfileService) { }
 
   ngOnInit() {
-    if (this.msg) {
-      this.snackBar.open(this.msg, 'OK', {
-        duration: 5000,
-      });
-    } else {
-      this.snackBar.dismiss();
-    }
   }
 
 }
